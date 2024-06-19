@@ -1,0 +1,113 @@
+
+{% extends '../base.html' %}
+
+{% block title %}Transaction Form{% endblock %}
+
+{% block content %}
+<style>
+
+
+    body {
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    form {
+        display: flex;
+        background-color: #7e8f7f;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        border: 1px solid #ccc;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-row {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 5px;
+        max-width: 500px;
+    }
+
+    label {
+        font-weight: bold;
+    }
+
+    input,
+    select {
+        width: 300px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    button {
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        background-color: #4CAF50;
+        color: white;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+
+
+
+</style>
+
+<h1>Enter Transaction Details</h1>
+<div class="form">
+    <form method="post">
+        {% csrf_token %}
+        {% if form.errors %}
+            <ul class="errorlist">
+                {% for field, errors in form.errors.items %}
+                    {% for error in errors %}
+                        <li>{{ field }}: {{ error }}</li>
+                    {% endfor %}
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <div>
+            <label for="id_date">Date:</label>
+            <input type="date" id="id_date" name="future_date">
+        </div>
+        <div>
+            <label for="id_bank_name">Bank Name:</label>
+            <select id="id_bank_name" name="bank_name">
+                <option value="" disabled selected>Choose Bank</option>
+                {% for bank_name in bank_names %}
+                    <option value="{{ bank_name }}">{{ bank_name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div>
+            <label for="id_deposit_type">Deposit Type:</label>
+            <select id="id_deposit_type" name="deposit_type">
+                <option value="" disabled selected>Deposit Type</option>
+                {% for deposit_type in deposit_types %}
+                    <option value="{{ deposit_type }}">{{ deposit_type }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div>
+            <label for="id_amount">Amount:</label>
+            <input type="text" id="id_amount" name="amount">
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+{% endblock %}
+

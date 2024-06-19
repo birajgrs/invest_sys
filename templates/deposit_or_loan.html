@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Investment Method{% endblock %}
+
+{% block content %}
+
+
+<h1>Choose an Investment Method</h1>
+
+
+    <a href="{% url 'bank_transaction' %}" class="btn btn-primary"
+    style="background-color: #007bff; color: #fff; border-radius: 5px; padding: 10px 20px; text-transform: uppercase; font-weight: bold; border: none; cursor: pointer; transition: background-color 0.3s ease;">Bank Deposit</a>
+    <a href="{% url 'loan_self_investment' %}" class="btn btn-primary"
+    style="background-color: #007bff; color: #fff; border-radius: 5px; padding: 10px 20px; text-transform: uppercase; font-weight: bold; border: none; cursor: pointer; transition: background-color 0.3s ease;">Loan/Self Investment</a>
+    <a href="{% url 'success_url' %}" class="btn btn-primary"
+    style="background-color: #007bff; color: #fff; border-radius: 5px; padding: 10px 20px; text-transform: uppercase; font-weight: bold; border: none; cursor: pointer; transition: background-color 0.3s ease;">View Investment</a>
+  
+
+
+
+
+{% endblock %}

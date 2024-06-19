@@ -1,0 +1,24 @@
+{% extends '../base.html' %}
+
+{% block title %}Loan/Self Form{% endblock %}
+
+{% block content %}
+<div class="container" style="max-width: 800px; margin: 0 auto; padding: 0 20px;">
+    <h2>Investment Form</h2>
+
+        <form method="post">
+            {% csrf_token %}
+            <p>{{ form.invest_amount.label_tag }}: {{ form.invest_amount }}</p>
+            <p>{{ form.bank_name.label_tag }}: {{ form.bank_name }}</p>
+            <p>{{ form.loan_rate.label_tag }}: {{ form.loan_rate }}</p>
+
+
+            <p>{{ form.ROI_Date.label_tag }}: {{ form.ROI_Date }}</p>
+
+
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+</div>
+{% endblock %}

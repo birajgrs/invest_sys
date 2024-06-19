@@ -1,0 +1,123 @@
+{% extends '../base.html' %}
+
+{% block title %}Financial Output{% endblock %}
+
+{% block style %}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #de7474;
+    }
+    h1, h2 {
+        color: #333;
+        text-align: center;
+    }
+    .details-table, .financials-table, .sectors-table {
+        width: 80%;
+        background-color: #de7474;
+
+        margin: 20px auto;
+        border-collapse: collapse;
+    }
+    .details-table th, .details-table td, .financials-table th, .financials-table td, .sectors-table th, .sectors-table td {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+    .details-table th, .financials-table th, .sectors-table th {
+
+        background-color: #de7474;
+
+        text-align: center;
+    }
+    .details-table tr:nth-child(even), .financials-table tr:nth-child(even), .sectors-table tr:nth-child(even) {
+        background-color: #de7474;
+
+    }
+    .details-table tr:hover, .financials-table tr:hover, .sectors-table tr:hover {
+        background-color: #de7474;
+
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<h1>Financial Output</h1>
+
+<h2>Business House Details</h2>
+<table class="details-table">
+    <tr>
+        <th>Name</th>
+        <td>{{ business_house.name }}</td>
+    </tr>
+    <tr>
+        <th>Total Investment</th>
+        <td>{{ business_house.total_investment }}</td>
+    </tr>
+    <tr>
+        <th>Discount Rate</th>
+        <td>{{ business_house.discount_rate }}</td>
+    </tr>
+    <tr>
+        <th>Operational Days</th>
+        <td>{{ business_house.operational_days }}</td>
+    </tr>
+    <tr>
+        <th>Project Lifetime</th>
+        <td>{{ business_house.project_lifetime }}</td>
+    </tr>
+</table>
+
+<h2>Financial Data</h2>
+<table class="financials-table">
+    <tr>
+        <th>Transaction Date</th>
+        <th>Daily Income</th>
+        <th>Daily Expenses</th>
+        <th>Daily Expenses Extra</th>
+    </tr>
+    {% for data in financial_data %}
+    <tr>
+        <td>{{ data.transaction_date }}</td>
+        <td>{{ data.daily_income }}</td>
+        <td>{{ data.daily_expenses }}</td>
+        <td>{{ data.daily_expenses_extra }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<h2>Calculated Financial Metrics</h2>
+<table class="financials-table">
+    <tr>
+        <th>ROI Time (days)</th>
+        <td>{{ roi_time }}</td>
+    </tr>
+    <tr>
+        <th>NPV</th>
+        <td>{{ npv }}</td>
+    </tr>
+    <tr>
+        <th>Profitability Index</th>
+        <td>{{ profitability_index }}</td>
+    </tr>
+</table>
+
+<h2>Sectors Information</h2>
+<table class="sectors-table">
+    <tr>
+        <th>Name</th>
+        <th>Other Expenses</th>
+        <th>Paid for NEA</th>
+        <th>Revenue</th>
+        <th>Adjusted Percentage</th>
+    </tr>
+    {% for sector in sectors %}
+    <tr>
+        <td>{{ sector.name }}</td>
+        <td>{{ sector.other_expenses }}</td>
+        <td>{{ sector.paid_for_nea }}</td>
+        <td>{{ sector.revenue }}</td>
+        <td>{{ sector.adjusted_percentage|floatformat:2 }}%</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

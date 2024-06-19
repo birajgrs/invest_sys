@@ -1,0 +1,66 @@
+{% extends '../base.html' %}
+
+{% block title %}Transaction Form{% endblock %}
+
+{% block content %}
+<style>
+    body {
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+    form {
+        display: flex;
+        background-color: #7e8f7f;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        border: 1px solid #ccc;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .form-row {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 5px;
+        max-width: 500px;
+    }
+    label {
+        font-weight: bold;
+    }
+    input, select {
+        width: 300px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    button {
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        background-color: #4CAF50;
+        color: white;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    button:hover {
+        background-color: #45a049;
+    }
+</style>
+
+<h1>Enter Transaction Details</h1>
+<div class="form">
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-row">
+            <label for="id_invest_amount">Investment Amount:</label>
+            {{ form.invest_amount }}
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+{% endblock %}

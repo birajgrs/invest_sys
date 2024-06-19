@@ -1,0 +1,70 @@
+{% extends '../base.html' %}
+
+{% block title %}Successful Investments{% endblock %}
+
+{% block style %}
+<style>
+  /* Styles for the container */
+  .container {
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 800px;
+    border: 1px solid #ddd;
+    background-color: #ebe1e1;
+    border-radius: 5px;
+  }
+
+  /* Styles for the investment list */
+  .investment-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Styles for list items */
+  .investment-list li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Styles for list item numbering */
+  .investment-list li:nth-child(odd) {
+    background-color: #d3cccc;
+  }
+
+  .investment-list li::before {
+    display: inline-block;
+    width: 20px;
+    margin-right: 10px;
+    font-weight: bold;
+    text-align: right;
+  }
+
+  /* Styles for links within list items */
+  .investment-list li a {
+    text-decoration: none;
+    color: #333;
+  }
+
+  /* Styles for links on hover */
+  .investment-list li a:hover {
+    color: #007bff;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h2>Successful Investments</h2>
+  <ul class="investment-list">
+    {% for investment in investments %}
+      <li>
+        <a href="{% url 'investment_details' investment.pk %}">
+          Investment Amount: {{ investment.invest_amount }} - ROI Date: {{ investment.ROI_Date|date:"F d, Y" }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}

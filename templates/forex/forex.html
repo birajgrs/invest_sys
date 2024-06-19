@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}Forex Rate{% endblock %}
+
+
+
+{% block content %}
+<div class="form-container">
+    <h1>Forex Rates</h1>
+    <form method="get" action="">
+        <label for="date">Enter the date (YYYY-MM-DD):</label>
+        <input type="text" id="date" name="date" required>
+        <button type="submit">Get Rates</button>
+    </form>
+</div>
+{% if forex_data %}
+    <h2 style="text-align: center;">Forex data for {{ date }}:</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Currency</th>
+                <th>ISO Code</th>
+                <th>Unit</th>
+                <th>Buy Rate</th>
+                <th>Sell Rate</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for rate in forex_data %}
+                <tr>
+                    <td>{{ rate.currency.name }}</td>
+                    <td>{{ rate.currency.iso3 }}</td>
+                    <td>{{ rate.currency.unit }}</td>
+                    <td>{{ rate.buy }}</td>
+                    <td>{{ rate.sell }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% elif date %}
+    <p style="text-align: center;">Failed to fetch FOREX data for {{ date }}.</p>
+{% else %}
+    <p style="text-align: center;">No data found.</p>
+{% endif %}
+{% endblock %}

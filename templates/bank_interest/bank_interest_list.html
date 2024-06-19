@@ -1,0 +1,68 @@
+
+{% extends '../base.html' %}
+
+{% block title %}Bank Interest Form{% endblock %}
+
+{% block style %}
+<style>
+    .ul_list {
+        padding: 10px; 
+        max-width: 1000px;
+        margin-left: 150px;
+        background-color: aliceblue;
+    }
+
+
+
+    .edit-btn {
+        background-color: blue;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        display: inline-block;
+        font-weight: bold;
+        margin-right: 10px; /* Add some margin between buttons */
+    }
+
+    .delete-btn {
+        background-color: red;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        display: inline-block;
+        font-weight: bold;
+    }
+
+    /* Add gap between list items */
+    .form-row {
+    margin-bottom: 10px; /* Adjust this value as needed */
+    display: flex; /* Make the row flex container */
+    justify-content: space-between; /* Spread items evenly */
+    align-items: center; /* Center items vertically */
+    margin-left: 20px; /* Add left margin */
+    margin-right: 20px; /* Add right margin */
+}
+
+
+
+</style>
+{% endblock %}
+
+{% block content %}
+    <h1>Bank Interest List</h1>
+    <ul class="ul_list">
+        {% for bank_interest in bank_interests %}
+            <div class="form-row">
+                <span>{{ bank_interest.bank_name }} - {{ bank_interest.deposit_type }} - {{ bank_interest.interest_rate }}% - {{ bank_interest.from_date }}</span>
+                <div class="button-group">
+                    <a href="{% url 'edit_bank_interest' bank_interest.id %}" class="edit-btn">Edit</a>
+                    <a href="{% url 'delete_bank_interest' bank_interest.id %}" class="delete-btn">Delete</a>
+                </div>
+            </div>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'add_bank_interest' %}" class="edit-btn">Add New Bank Interest</a>
+    <br><br><br><br><br>
+{% endblock %}

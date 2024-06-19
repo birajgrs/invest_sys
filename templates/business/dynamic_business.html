@@ -1,0 +1,120 @@
+{% extends '../base.html' %}
+
+{% block title %}
+  {% if businesshouse %}
+    {{ businesshouse.name }} Details
+  {% else %}
+    {% if form %}
+      Add Business House
+    {% else %}
+      Business Houses List
+    {% endif %}
+  {% endif %}
+{% endblock %}
+
+
+
+{% block content %}
+<div class="container">
+
+<!-- Business Houses List -->
+{% if not businesshouse and not form %}
+  <div class="businessbody">
+    <h1>Business Houses List</h1>
+    <ul>
+      {% for house in businesshouses %}
+        <li>
+          <span style="display: inline-block;">
+            <a href="{% url 'businesshouse_detail' house.pk %}">{{ house.name }}</a>
+          </span>
+          <span style="display: inline-block;">
+            <form method="post" action="{% url 'businesshouse_delete' house.pk %}" style="display: inline;">
+              {% csrf_token %}
+              <button type="submit" class="btn">Delete</button>
+            </form>
+          </span>
+        </li>
+      {% endfor %}
+    </ul>
+  
+    <a href="{% url 'add_businesshouse' %}" class="btn btn-primary">Add Business House</a>
+  </div>
+{% endif %}
+
+<!-- Business House Details -->
+{% if businesshouse %}
+  <div class="businessbody">
+    <h1>{{ businesshouse.name }} Details</h1>
+    <p><strong>Description:</strong> {{ businesshouse.description }}</p>
+    <p><strong>Founded Date:</strong> {{ businesshouse.founded_date }}</p>
+    <p><strong>Location:</strong> {{ businesshouse.location }}</p>
+    <p><strong>Website:</strong> <a href="{{ businesshouse.website }}" target="_blank">{{ businesshouse.website }}</a></p>
+    <p><strong>Type of Service/Product:</strong> {{ businesshouse.type_of_service_or_product }}</p>
+    <p><strong>Total Investment:</strong> {{ businesshouse.total_investment }}</p>
+    <p><strong>Initial Investment:</strong> {{ businesshouse.initial_investment }}</p>
+    <p><strong>Discount Rate:</strong> {{ businesshouse.discount_rate }}</p>
+    <p><strong>Operational Days:</strong> {{ businesshouse.operational_days }}</p>
+    <p><strong>Project Lifetime:</strong> {{ businesshouse.project_lifetime }}</p>
+    <a href="{% url 'businesshouse_list' %}" class="btn btn-primary">Back to list</a>
+  </div>
+{% endif %}
+
+<!-- Add Business House Form -->
+<div class="formdata">
+{% if form %}
+  <div class="businessbody">
+    <h1>Add Business House</h1>
+    <form method="post">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="id_name">Name:</label>
+        {{ form.name }}
+      </div>
+      <div class="form-group">
+        <label for="id_description">Description:</label>
+        {{ form.description }}
+      </div>
+      <div class="form-group">
+        <label for="id_founded_date">Founded Date:</label>
+        {{ form.founded_date }}
+      </div>
+      <div class="form-group">
+        <label for="id_location">Location:</label>
+        {{ form.location }}
+      </div>
+      <div class="form-group">
+        <label for="id_website">Website:</label>
+        {{ form.website }}
+      </div>
+      <div class="form-group">
+        <label for="id_type_of_service_or_product">Type of Service/Product:</label>
+        {{ form.type_of_service_or_product }}
+      </div>
+      <div class="form-group">
+        <label for="id_total_investment">Total Investment:</label>
+        {{ form.total_investment }}
+      </div>
+      <div class="form-group">
+        <label for="id_initial_investment">Initial Investment:</label>
+        {{ form.initial_investment }}
+      </div>
+      <div class="form-group">
+        <label for="id_discount_rate">Discount Rate:</label>
+        {{ form.discount_rate }}
+      </div>
+      <div class="form-group">
+        <label for="id_operational_days">Operational Days:</label>
+        {{ form.operational_days }}
+      </div>
+      <div class="form-group">
+        <label for="id_project_lifetime">Project Lifetime:</label>
+        {{ form.project_lifetime }}
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+{% endif %}
+</div>
+
+</div>
+{% endblock %}

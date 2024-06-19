@@ -1,0 +1,51 @@
+{% extends '../base.html' %}
+
+{% block title %}Investment Details{% endblock %}
+
+{% block style %}
+<style>
+  .flex-container {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    gap: 20px; /* Add gap between boxes */
+    width: 1000px;
+    margin-left: 150px;
+  }
+  .form-row {
+    flex: 1; 
+    margin-right: 10px;
+    background-color: rgb(212, 200, 200); 
+    padding: 20px; 
+    border-radius: 10px; 
+  }
+  .form-row > form {
+    width: 80%;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="flex-container">
+<div class="form-row">
+  <h2>Investment Details</h2>
+  <p>Investment amount: {{ investment.invest_amount }}</p>
+  <p>Bank name: {{ investment.bank_name }}</p>
+  <p>Loan rate: {{ investment.loan_rate }}</p>
+  <p>ROI Date: {{ investment.ROI_Date|date:"F d, Y" }}</p>
+  <p>Interest: {{ investment.interest }}</p>
+  <p>Total amount: {{ investment.total_amount }}</p>
+
+  <form method="POST">
+    {% csrf_token %}
+    <button type="submit" name="delete">Delete Investment</button>
+  </form>
+
+  <a href="{% url 'success_url' %}">Back to Investments</a>
+</div>
+
+<div class="form-row">
+  <h4>Choose a Business House</h4>
+</div>
+</div>
+{% endblock %}

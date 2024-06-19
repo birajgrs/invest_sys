@@ -1,0 +1,54 @@
+{% extends '../base.html' %}
+
+{% block title %}Financial Input/Show{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Financial Data</h1>
+
+    <div class="row">
+        <!-- Form for selecting and showing business house details -->
+        <div class="col-md-6">
+            <form method="get" action="{% url 'financial_input' %}">
+                <div class="form-group">
+                    <label for="id_business_house_select">Select Business House:</label>
+                    <select name="business_house_id" id="id_business_house_select" class="form-control">
+                        <option value="">Select a business house</option>
+                        {% for business_house in business_houses %}
+                            <option value="{{ business_house.id }}">{{ business_house.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary" style="color: antiquewhite;">Show</button>
+            </form>
+
+            {% if selected_business_house_id %}
+                <hr>
+                <h2>{{ selected_business_house.name }}</h2>
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="id_business_house">Business House:</label>
+                        {{ financial_form.business_house }}
+                    </div>
+                    <div class="form-group">
+                        <label for="id_transaction_date">Transaction Date:</label>
+                        {{ financial_form.transaction_date }}
+                    </div>
+                    <div class="form-group">
+                        <label for="id_daily_income">Daily Income:</label>
+                        {{ financial_form.daily_income }}
+                    </div>
+                    <div class="form-group">
+                        <label for="id_daily_expenses">Daily Expenses:</label>
+                        {{ financial_form.daily_expenses }}
+                    </div>
+                    <button type="submit" class="btn btn-success" name="financial_form_submit">Submit Financial Data</button>
+                </form>
+            {% endif %}
+        </div>
+
+    
+    </div>
+</div>
+{% endblock %}

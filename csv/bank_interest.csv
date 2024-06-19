@@ -1,0 +1,105 @@
+bank_name,deposit_type,interest_rate,from_date
+Nepal Bank Ltd.,Savings Rate,5.65%,2024-01-01
+Nepal Bank Ltd.,Fixed Rate,6.75%,2024-01-01
+Rastriya Banijya Bank,Savings Rate,4.65%,2024-01-01
+Rastriya Banijya Bank,Fixed Rate,6.40%,2024-01-01
+Nabil Bank,Savings Rate,5.15%,2024-01-01
+Nabil Bank,Fixed Rate,6.75%,2024-01-01
+Nepal Investment Mega Bank,Savings Rate,4.50%,2024-01-01
+Nepal Investment Mega Bank,Fixed Rate,7.00%,2024-01-01
+Standard Chartered Bank,Savings Rate,4.55%,2024-01-01
+Standard Chartered Bank,Fixed Rate,7.00%,2024-01-01
+Himalayan Bank,Savings Rate,5.50%,2024-01-01
+Himalayan Bank,Fixed Rate,7.50%,2024-01-01
+Nepal SBI Bank,Savings Rate,3.80%,2024-01-01
+Nepal SBI Bank,Fixed Rate,6.39%,2024-01-01
+Everest Bank,Savings Rate,5.00%,2024-01-01
+Everest Bank,Fixed Rate,6.50%,2024-01-01
+NIC ASIA Bank,Savings Rate,5.65%,2024-01-01
+NIC ASIA Bank,Fixed Rate,7.80%,2024-01-01
+Machhapuchhre Bank,Savings Rate,5.30%,2024-01-01
+Machhapuchhre Bank,Fixed Rate,7.25%,2024-01-01
+Kumari Bank,Savings Rate,5.41%,2024-01-01
+Kumari Bank,Fixed Rate,7.26%,2024-01-01
+Laxmi Sunrise,Savings Rate,5.25%,2024-01-01
+Laxmi Sunrise,Fixed Rate,7.00%,2024-01-01
+Siddhartha Bank,Savings Rate,5.25%,2024-01-01
+Siddhartha Bank,Fixed Rate,7.00%,2024-01-01
+Agriculture Dev. Bank,Savings Rate,4.76%,2024-01-01
+Agriculture Dev. Bank,Fixed Rate,5.666%,2024-01-01
+Global IME Bank,Savings Rate,4.50%,2024-01-01
+Global IME Bank,Fixed Rate,7.50%,2024-01-01
+Citizens Bank Int'l,Savings Rate,5.25%,2024-01-01
+Citizens Bank Int'l,Fixed Rate,7.00%,2024-01-01
+Prime Commercial Bank,Savings Rate,5.25%,2024-01-01
+Prime Commercial Bank,Fixed Rate,7.00%,2024-01-01
+NMB Bank,Savings Rate,4.75%,2024-01-01
+NMB Bank,Fixed Rate,7.80%,2024-01-01
+Prabhu Bank,Savings Rate,6.00%,2024-01-01
+Prabhu Bank,Fixed Rate,7.50%,2024-01-01
+Sanima Bank,Savings Rate,5.20%,2024-01-01
+Sanima Bank,Fixed Rate,6.90%,2024-01-01
+Narayani Bikas Bank,Savings Rate,6.00%,2024-01-01
+Narayani Bikas Bank,Fixed Rate,9.00%,2024-01-01
+Karnali Bikas Bank,Savings Rate,5.00%,2024-01-01
+Karnali Bikas Bank,Fixed Rate,8.50%,2024-01-01
+Excel Bikas Bank,Savings Rate,5.25%,2024-01-01
+Excel Bikas Bank,Fixed Rate,8.00%,2024-01-01
+Miteri Bikas Bank,Savings Rate,6.00%,2024-01-01
+Miteri Bikas Bank,Fixed Rate,8.00%,2024-01-01
+Muktinath Bikas Bank,Savings Rate,5.25%,2024-01-01
+Muktinath Bikas Bank,Fixed Rate,7.50%,2024-01-01
+Corporate Bikas Bank,Savings Rate,7.50%,2024-01-01
+Corporate Bikas Bank,Fixed Rate,8.80%,2024-01-01
+Sindhu Bikas Bank,Savings Rate,5.00%,2024-01-01
+Sindhu Bikas Bank,Fixed Rate,7.51%,2024-01-01
+Green Dev. Bank,Savings Rate,5.75%,2024-01-01
+Green Dev. Bank,Fixed Rate,8.00%,2024-01-01
+Shangrila Bikas Bank,Savings Rate,4.00%,2024-01-01
+Shangrila Bikas Bank,Fixed Rate,7.75%,2024-01-01
+Shine Resunga BB,Savings Rate,5.01%,2024-01-01
+Shine Resunga BB,Fixed Rate,7.50%,2024-01-01
+Jyoti Bikas Bank,Savings Rate,5.00%,2024-01-01
+Jyoti Bikas Bank,Fixed Rate,7.50%,2024-01-01
+Garima Bikas Bank,Savings Rate,5.05%,2024-01-01
+Garima Bikas Bank,Fixed Rate,7.50%,2024-01-01
+Mahalaxmi Bikas Bank,Savings Rate,6.50%,2024-01-01
+Mahalaxmi Bikas Bank,Fixed Rate,7.50%,2024-01-01
+Lumbini Bikas Bank,Savings Rate,5.00%,2024-01-01
+Lumbini Bikas Bank,Fixed Rate,7.25%,2024-01-01
+Kamana Sewa B.Bank,Savings Rate,6.50%,2024-01-01
+Kamana Sewa B.Bank,Fixed Rate,7.75%,2024-01-01
+Saptakoshi Bikas Bank,Savings Rate,5.15%,2024-01-01
+Saptakoshi Bikas Bank,Fixed Rate,8.00%,2024-01-01
+Gurkhas Finance Ltd,Savings Rate,6.50%,2024-01-01
+Gurkhas Finance Ltd,Fixed Rate,8.75%,2024-01-01
+Goodwill Finance Co.,Savings Rate,--,2024-01-01
+Goodwill Finance Co.,Fixed Rate,8.00%,2024-01-01
+Shree Invest & Finance,Savings Rate,6.50%,2024-01-01
+Shree Invest & Finance,Fixed Rate,8.10%,2024-01-01
+Nepal Finance Co.,Savings Rate,--,2024-01-01
+Nepal Finance Co.,Fixed Rate,8.75%,2024-01-01
+Best Finance Co.,Savings Rate,7.00%,2024-01-01
+Best Finance Co.,Fixed Rate,9.00%,2024-01-01
+Progressive Fin. Co.,Savings Rate,7.50%,2024-01-01
+Progressive Fin. Co.,Fixed Rate,8.50%,2024-01-01
+Janaki Finance Co.,Savings Rate,0.00%,2024-01-01
+Janaki Finance Co.,Fixed Rate,8.75%,2024-01-01
+Pokhara Finance,Savings Rate,5.25%,2024-01-01
+Pokhara Finance,Fixed Rate,7.70%,2024-01-01
+Central Finance Ltd,Savings Rate,0.00%,2024-01-01
+Central Finance Ltd,Fixed Rate,8.50%,2024-01-01
+Multipurpose Finance,Savings Rate,6.50%,2024-01-01
+Multipurpose Finance,Fixed Rate,8.75%,2024-01-01
+Samriddhi Finance Co.,Savings Rate,6.35%,2024-01-01
+Samriddhi Finance Co.,Fixed Rate,9.25%,2024-01-01
+Guheshwori Finance,Savings Rate,6.25%,2024-01-01
+Guheshwori Finance,Fixed Rate,8.50%,2024-01-01
+ICFC Finance Ltd,Savings Rate,5.00%,2024-01-01
+ICFC Finance Ltd,Fixed Rate,7.80%,2024-01-01
+Manjushree Finance,Savings Rate,6.00%,2024-01-01
+Manjushree Finance,Fixed Rate,8.60%,2024-01-01
+Reliance Finance Ltd.,Savings Rate,6.75%,2024-01-01
+Reliance Finance Ltd.,Fixed Rate,9.25%,2024-01-01
+Salapa Bikas Bank,Savings Rate,4.73%,2024-01-01
+Salapa Bikas Bank,Fixed Rate,8.50%,2024-01-01

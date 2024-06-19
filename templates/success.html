@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Success{% endblock %}
+
+{% block content %}
+
+<h1>Transaction Successful!</h1>
+<p>Transaction ID: {{ transaction.id }}</p>
+<p>Date: {{ context.date }}</p>
+<p>Bank Name: {{ context.bank_name }}</p>
+<p>Deposit Type: {{ context.deposit_type }}</p>
+<p>Amount: {{ context.amount }}</p>
+<p>Days: {{ context.days }}</p>
+
+<p>Total Interest: {{ context.total_interest }}</p>
+<p>Total Amount: {{ context.total_amount }}</p>
+
+
+{% endblock %}

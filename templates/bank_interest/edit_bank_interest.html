@@ -1,0 +1,104 @@
+{% extends '../base.html' %}
+
+{% block title %}Edit Form{% endblock %}
+
+
+{% block style %}
+
+
+<style>
+  /* Basic styles */
+  body {
+    font-family: sans-serif;
+    margin: 20px;
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  /* Form layout */
+  .flex-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .form-row {
+    width: 500px;
+    background-color: #9BA2CC;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .input-group {
+    margin-bottom: 15px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  /* Adjust input width if needed */
+  input[type="text"], input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+
+  button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  button[type="submit"]:hover {
+    background-color: #3e8e41;
+  }
+</style>
+
+{% endblock %}
+
+
+{% block content %}
+  <div class="flex-container">
+    <div class="form-row">
+      <h1>Edit Bank Interest</h1>
+      <form method="post">
+        {% csrf_token %}
+
+        <div class="input-group">
+          <label for="{{ form.bank_name.id_for_label }}">Bank Name:</label>
+          {{ form.bank_name }}
+        </div>
+
+        <div class="input-group">
+          <label for="{{ form.deposit_type.id_for_label }}">Deposit Type:</label>
+          {{ form.deposit_type }}
+        </div>
+
+        <div class="input-group">
+          <label for="{{ form.interest_rate.id_for_label }}">Interest Rate:</label>
+          {{ form.interest_rate }}
+        </div>
+
+        <div class="input-group">
+          <label for="{{ form.from_date.id_for_label }}">From Date: </label>
+          <div>
+            {{ form.from_date }}
+          </div>
+        </div>
+
+        <button type="submit">Update</button>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
